@@ -1,0 +1,28 @@
+﻿@page "{handler?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Web API Client - İstemcisi";
+}
+
+<div class="border border-info p-2 m-1">
+    <a asp-page="/Index" asp-page-handler="Tumu">Tüm Listeyi Getir</a>
+</div>
+<form method="post" asp-page-handler="Listeden" class="border border-warning p-2 m-1">
+    indis'den değer çağırma
+    <input type="text" name="indis" value="0" autofocus />
+    <input type="submit" value="Değeri Getir" />
+</form>
+<form method="post" asp-page-handler="Hesapla" class="border border-success p-2 m-1">
+    a sayısı
+    <br />
+    <input type="text" name="a" value="0" />
+    <br>
+    b sayısı
+    <br />
+    <input type="text" name="b" value="0" />
+    <br>
+    <input type="submit" value="Toplama İşlemi Yap" />
+</form> 
+<div class="text-center h4">
+    Sonuç: @Model.gelen
+</div>
